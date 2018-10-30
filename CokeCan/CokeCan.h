@@ -10,6 +10,8 @@
 extern "C" {
 #endif
 
+	struct CokeCanDelegate;
+
 	typedef void(*COKE_CAN_PRINT_FUNC)(struct CokeCanDelegate *delegate, const char *str);
 	typedef void(*COKE_CAN_INPUT_FUNC)(struct CokeCanDelegate *delegate, char *buf, int size);
 

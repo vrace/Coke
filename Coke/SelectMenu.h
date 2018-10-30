@@ -1,6 +1,8 @@
 #ifndef SELECT_MENU_H
 #define SELECT_MENU_H
 
+struct SelectMenuParams;
+
 typedef const char*(*SELECT_MENU_ENTRY_AT_INDEX)(struct SelectMenuParams *self, int index);
 
 typedef struct SelectMenuParams

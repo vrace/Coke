@@ -4,13 +4,13 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="MenuMain.c" />
     <ClCompile Include="CokeCanDelegateInit.c" />
-    <ClCompile Include="Shortcut.c" />
     <ClCompile Include="SelectMenu.c" />
+    <ClCompile Include="ShortcutMain.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MenuMain.h" />
     <ClInclude Include="CokeCanDelegateInit.h" />
-    <ClInclude Include="Shortcut.h" />
     <ClInclude Include="SelectMenu.h" />
+    <ClInclude Include="ShortcutMain.h" />
   </ItemGroup>
 </Project>

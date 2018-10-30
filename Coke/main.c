@@ -4,7 +4,7 @@
 #include "../CokeCan/CokeCan.h"
 #include "CokeCanDelegateInit.h"
 #include "MenuMain.h"
-#include "Shortcut.h"
+#include "ShortcutMain.h"
 
 int main(int argc, char *argv[])
 {

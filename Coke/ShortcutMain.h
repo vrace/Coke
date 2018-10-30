@@ -1,5 +1,5 @@
-#ifndef SHORTCUT_H
-#define SHORTCUT_H
+#ifndef SHORTCUT_MAIN_H
+#define SHORTCUT_MAIN_H
 
 #include "../CokeCan/CokeCan.h"
 

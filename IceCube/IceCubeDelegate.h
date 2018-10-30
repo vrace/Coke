@@ -5,6 +5,8 @@
 extern "C" {
 #endif
 
+	struct IceCubeDelegate;
+
 	typedef void(*PRINT_FUNC)(struct IceCubeDelegate *delegate, const char *str);
 	typedef void(*INPUT_FUNC)(struct IceCubeDelegate *delegate, char *buf, int size);
 
