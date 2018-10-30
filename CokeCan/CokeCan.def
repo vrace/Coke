@@ -1,0 +1,10 @@
+LIBRARY CokeCan
+EXPORTS
+	CokeCan_Init				@1
+	CokeCan_Free				@2
+	CokeCan_LoadIceCubes		@3
+	CokeCan_NumberOfIce			@4
+	CokeCan_IceName				@5
+	CokeCan_NumberOfIceCubes	@6
+	CokeCan_IceCubeName			@7
+	CokeCan_RunIceCube			@8

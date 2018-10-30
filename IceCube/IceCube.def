@@ -1,0 +1,7 @@
+LIBRARY IceCube
+EXPORTS
+	IceCube_Version @1
+	IceCube_IceName @2
+	IceCube_NumberOfIceCubes @3
+	IceCube_NameOfIceCube @4
+	IceCube_RunIceCube @5

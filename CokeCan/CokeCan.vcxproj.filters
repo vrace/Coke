@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="CokeCan.h" />
+    <ClInclude Include="IceCubeDelegate.h" />
+    <ClInclude Include="IceCubeDelegateInit.h" />
+    <ClInclude Include="Ice.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CokeCan.c" />
+    <ClCompile Include="IceCubeDelegateInit.c" />
+    <ClCompile Include="Ice.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CokeCan.def" />
+  </ItemGroup>
+</Project>

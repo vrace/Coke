@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.c" />
+    <ClCompile Include="MenuMain.c" />
+    <ClCompile Include="CokeCanDelegateInit.c" />
+    <ClCompile Include="Shortcut.c" />
+    <ClCompile Include="SelectMenu.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MenuMain.h" />
+    <ClInclude Include="CokeCanDelegateInit.h" />
+    <ClInclude Include="Shortcut.h" />
+    <ClInclude Include="SelectMenu.h" />
+  </ItemGroup>
+</Project>
