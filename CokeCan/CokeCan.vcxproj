@@ -51,13 +51,16 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;COKECAN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;COKECAN_EXPORTS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>CokeCan.def</ModuleDefinitionFile>
     </Link>
+    <PostBuildEvent>
+      <Command>CopyHeaders.bat</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -82,11 +85,14 @@
     <ClInclude Include="Ice.h" />
     <ClInclude Include="IceCubeDelegate.h" />
     <ClInclude Include="IceCubeDelegateInit.h" />
+    <ClInclude Include="WebRequest.h" />
+    <ClInclude Include="WebRequestImpl.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CokeCan.c" />
     <ClCompile Include="Ice.c" />
     <ClCompile Include="IceCubeDelegateInit.c" />
+    <ClCompile Include="WebRequestImpl.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CokeCan.def" />

@@ -5,11 +5,14 @@
     <ClInclude Include="IceCubeDelegate.h" />
     <ClInclude Include="IceCubeDelegateInit.h" />
     <ClInclude Include="Ice.h" />
+    <ClInclude Include="WebRequest.h" />
+    <ClInclude Include="WebRequestImpl.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CokeCan.c" />
     <ClCompile Include="IceCubeDelegateInit.c" />
     <ClCompile Include="Ice.c" />
+    <ClCompile Include="WebRequestImpl.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CokeCan.def" />
