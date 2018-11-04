@@ -1,6 +1,8 @@
 #ifndef ICE_CUBE_DELEGATE_H
 #define ICE_CUBE_DELEGATE_H
 
+#include "WebRequest.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -9,11 +11,15 @@ extern "C" {
 
 	typedef void(*PRINT_FUNC)(struct IceCubeDelegate *delegate, const char *str);
 	typedef void(*INPUT_FUNC)(struct IceCubeDelegate *delegate, char *buf, int size);
+	typedef WEB_RESPONSE*(*WEB_REQUEST_FUNC)(struct IceCubeDelegate *delegate, WEB_REQUEST *request);
+	typedef void(*RELEASE_WEB_RESPONSE_FUNC)(struct IceCubeDelegate *delegate, WEB_RESPONSE *response);
 
 	typedef struct IceCubeDelegate
 	{
 		PRINT_FUNC print;
 		INPUT_FUNC input;
+		WEB_REQUEST_FUNC webRequest;
+		RELEASE_WEB_RESPONSE_FUNC releaseWebResponse;
 	} ICE_CUBE_DELEGATE;
 
 #ifdef __cplusplus

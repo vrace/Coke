@@ -11,6 +11,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CokeCan", "CokeCan\CokeCan.vcxproj", "{E6A018A3-F7F5-4C53-8B3E-D78EAAEF6FBB}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IceCube", "IceCube\IceCube.vcxproj", "{DD368C2C-6872-43F0-84E8-710A789270BF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E6A018A3-F7F5-4C53-8B3E-D78EAAEF6FBB} = {E6A018A3-F7F5-4C53-8B3E-D78EAAEF6FBB}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
