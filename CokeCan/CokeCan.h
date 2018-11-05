@@ -1,9 +1,6 @@
 #ifndef COKE_CAN_H
 #define COKE_CAN_H
 
-#define COKE_CAN_VERSION_MAJOR 0
-#define COKE_CAN_VERSION_MINOR 1
-
 #define COKE_CAN_API __stdcall
 
 #ifdef __cplusplus

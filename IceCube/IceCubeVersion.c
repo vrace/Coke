@@ -1,10 +1,8 @@
 #include "IceCube.h"
-
-#define REQUIRE_VERSION_MAJOR 0
-#define REQUIRE_VERSION_MINOR 0
+#include "IceCubeDelegate.h"
 
 void ICE_CUBE_API IceCube_Version(int *major, int *minor)
 {
-	*major = REQUIRE_VERSION_MAJOR;
-	*minor = REQUIRE_VERSION_MINOR;
+	*major = ICE_CUBE_VERSION_MAJOR;
+	*minor = ICE_CUBE_VERSION_MINOR;
 }

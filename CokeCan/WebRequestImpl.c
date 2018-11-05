@@ -171,10 +171,10 @@ WEB_RESPONSE* LoadResponse(void)
 	LoadResponseHeaders(response);
 	LoadResponseBody(&response->body);
 
-	unlink(REQUEST_HEADERS_FILE);
-	unlink(REQUEST_BODY_FILE);
-	unlink(RESPONSE_HEADERS_FILE);
-	unlink(RESPONSE_BODY_FILE);
+	_unlink(REQUEST_HEADERS_FILE);
+	_unlink(REQUEST_BODY_FILE);
+	_unlink(RESPONSE_HEADERS_FILE);
+	_unlink(RESPONSE_BODY_FILE);
 
 	return response;
 }
