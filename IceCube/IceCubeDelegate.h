@@ -1,6 +1,9 @@
 #ifndef ICE_CUBE_DELEGATE_H
 #define ICE_CUBE_DELEGATE_H
 
+#define ICE_CUBE_VERSION_MAJOR 0
+#define ICE_CUBE_VERSION_MINOR 1
+
 #include "WebRequest.h"
 
 #ifdef __cplusplus

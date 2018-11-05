@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "CokeCan.h"
 #include "Ice.h"
+#include "IceCubeDelegate.h"
 #include "IceCubeDelegateInit.h"
 
 typedef struct IceChain
@@ -49,10 +50,10 @@ int CokeCan_CheckIceVersion(ICE *ice)
 
 	ice->version(&major, &minor);
 
-	if (major != COKE_CAN_VERSION_MAJOR)
+	if (major != ICE_CUBE_VERSION_MAJOR)
 		return 1;
 
-	if (minor > COKE_CAN_VERSION_MINOR)
+	if (minor > ICE_CUBE_VERSION_MINOR)
 		return 2;
 
 	return 0;
