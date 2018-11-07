@@ -7,12 +7,14 @@
     <ClInclude Include="Ice.h" />
     <ClInclude Include="WebRequest.h" />
     <ClInclude Include="WebRequestImpl.h" />
+    <ClInclude Include="IniFile.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CokeCan.c" />
     <ClCompile Include="IceCubeDelegateInit.c" />
     <ClCompile Include="Ice.c" />
     <ClCompile Include="WebRequestImpl.c" />
+    <ClCompile Include="IniFile.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CokeCan.def" />

@@ -85,6 +85,7 @@
     <ClInclude Include="Ice.h" />
     <ClInclude Include="IceCubeDelegate.h" />
     <ClInclude Include="IceCubeDelegateInit.h" />
+    <ClInclude Include="IniFile.h" />
     <ClInclude Include="WebRequest.h" />
     <ClInclude Include="WebRequestImpl.h" />
   </ItemGroup>
@@ -92,6 +93,7 @@
     <ClCompile Include="CokeCan.c" />
     <ClCompile Include="Ice.c" />
     <ClCompile Include="IceCubeDelegateInit.c" />
+    <ClCompile Include="IniFile.c" />
     <ClCompile Include="WebRequestImpl.c" />
   </ItemGroup>
   <ItemGroup>
