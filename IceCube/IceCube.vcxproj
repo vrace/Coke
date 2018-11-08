@@ -81,6 +81,9 @@
     <ClCompile Include="IceCube.c" />
     <ClCompile Include="IceCubeVersion.c" />
     <ClCompile Include="IceName.c" />
+    <ClCompile Include="Scenarios\HelloWorldExample.c" />
+    <ClCompile Include="Scenarios\IniFileExample.c" />
+    <ClCompile Include="Scenarios\WebRequestExample.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="IceCube.def" />
@@ -88,6 +91,9 @@
   <ItemGroup>
     <ClInclude Include="IceCube.h" />
     <ClInclude Include="IceCubeDelegate.h" />
+    <ClInclude Include="Scenarios\HelloWorldExample.h" />
+    <ClInclude Include="Scenarios\IniFileExample.h" />
+    <ClInclude Include="Scenarios\WebRequestExample.h" />
     <ClInclude Include="WebRequest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

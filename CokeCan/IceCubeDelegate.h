@@ -2,7 +2,7 @@
 #define ICE_CUBE_DELEGATE_H
 
 #define ICE_CUBE_VERSION_MAJOR 0
-#define ICE_CUBE_VERSION_MINOR 2
+#define ICE_CUBE_VERSION_MINOR 3
 
 #include "WebRequest.h"
 
@@ -11,7 +11,7 @@ extern "C" {
 #endif
 
 	struct IceCubeDelegate;
-	struct IniFile;
+	typedef struct IniFile INI_FILE;
 
 	typedef void(*PRINT_FUNC)(struct IceCubeDelegate *delegate, const char *str);
 	typedef void(*INPUT_FUNC)(struct IceCubeDelegate *delegate, char *buf, int size);

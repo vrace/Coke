@@ -4,6 +4,15 @@
     <ClCompile Include="IceCube.c" />
     <ClCompile Include="IceCubeVersion.c" />
     <ClCompile Include="IceName.c" />
+    <ClCompile Include="Scenarios\HelloWorldExample.c">
+      <Filter>Scenarios</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenarios\IniFileExample.c">
+      <Filter>Scenarios</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenarios\WebRequestExample.c">
+      <Filter>Scenarios</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="IceCube.def" />
@@ -12,5 +21,19 @@
     <ClInclude Include="IceCube.h" />
     <ClInclude Include="IceCubeDelegate.h" />
     <ClInclude Include="WebRequest.h" />
+    <ClInclude Include="Scenarios\HelloWorldExample.h">
+      <Filter>Scenarios</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenarios\IniFileExample.h">
+      <Filter>Scenarios</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenarios\WebRequestExample.h">
+      <Filter>Scenarios</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Scenarios">
+      <UniqueIdentifier>{0e12dec7-cfd0-48f7-be39-d230794dd692}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
