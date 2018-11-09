@@ -3,6 +3,6 @@
 
 #include "../CokeCan/CokeCan.h"
 
-void CokeCanDelegate_Init(COKE_CAN_DELEGATE *delegate);
+void CokeCanDelegate_Init(COKE_CAN_DELEGATE *fn);
 
 #endif

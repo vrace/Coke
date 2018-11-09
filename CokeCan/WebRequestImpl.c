@@ -56,18 +56,28 @@ long WriteBody(WEB_REQUEST *request)
 int PrepareRequest(WEB_REQUEST *request)
 {
 	FILE *fp;
+	const char *header = NULL;
+	const char *body = NULL;
 
 	fp = fopen(CURL_EXEC, "w");
 	if (!fp)
 		return 0;
 
+	header = request->headersFile;
+	if (!header && WriteHeaders(request) > 0)
+		header = REQUEST_HEADERS_FILE;
+
+	body = request->bodyFile;
+	if (!body && WriteBody(request) > 0)
+		body = REQUEST_BODY_FILE;
+
 	fprintf(fp, "@echo off\n");
 	fprintf(fp, "curl -s -k -X %s ", request->method);
-	if (WriteHeaders(request) > 0)
-		fprintf(fp, "-H @%s ", REQUEST_HEADERS_FILE);
+	if (header)
+		fprintf(fp, "-H @%s ", header);
 	fprintf(fp, "-D %s ", RESPONSE_HEADERS_FILE);
-	if (WriteBody(request) > 0)
-		fprintf(fp, "--data-binary @%s ", REQUEST_BODY_FILE);
+	if (body)
+		fprintf(fp, "--data-binary @%s ", body);
 	fprintf(fp, "%s > %s\n", request->url, RESPONSE_BODY_FILE);
 
 	fclose(fp);
@@ -84,7 +94,7 @@ int ExtractStatusCode(const char *line)
 	return atoi(line);
 }
 
-WEB_RESPONSE_HEADER* ExtractHeader(const char *line)
+WEB_RESPONSE_HEADER* ExtractHeader(char *line)
 {
 	char *delim;
 	int len;
@@ -95,17 +105,14 @@ WEB_RESPONSE_HEADER* ExtractHeader(const char *line)
 
 	WEB_RESPONSE_HEADER *header = malloc(sizeof(WEB_RESPONSE_HEADER));
 
-	len = delim - line;
-	header->name = malloc(len + 1);
-	strncpy(header->name, line, len);
-	header->name[len] = '\0';
+	*delim = '\0';
+	header->name = _strdup(line);
 
 	for (delim++; *delim && isspace(*delim); delim++);
 	len = strlen(delim);
-	header->value = malloc(len + 1);
-	strcpy(header->value, delim);
-	if (len > 0 && header->value[len - 1] == '\n')
-		header->value[len - 1] = '\0';
+	if (delim > 0 && delim[len - 1] == '\n')
+		delim[--len] = '\0';
+	header->value = _strdup(delim);
 
 	header->next = NULL;
 
@@ -147,6 +154,7 @@ void LoadResponseHeaders(WEB_RESPONSE *response)
 void LoadResponseBody(WEB_RESPONSE_BODY *response)
 {
 	FILE *fp;
+	char *content;
 
 	response->size = 0;
 	response->content = NULL;
@@ -159,9 +167,10 @@ void LoadResponseBody(WEB_RESPONSE_BODY *response)
 	response->size = ftell(fp);
 	fseek(fp, 0, SEEK_SET);
 
-	response->content = malloc(response->size);
-	fread(response->content, 1, response->size, fp);
+	content = malloc(response->size);
+	fread(content, 1, response->size, fp);
 	fclose(fp);
+	response->content = content;
 }
 
 WEB_RESPONSE* LoadResponse(void)
@@ -175,6 +184,7 @@ WEB_RESPONSE* LoadResponse(void)
 	_unlink(REQUEST_BODY_FILE);
 	_unlink(RESPONSE_HEADERS_FILE);
 	_unlink(RESPONSE_BODY_FILE);
+	_unlink(CURL_EXEC);
 
 	return response;
 }
@@ -207,7 +217,7 @@ void ReleaseWebResponse(WEB_RESPONSE *response)
 	}
 
 	if (response->body.content)
-		free(response->body.content);
+		free((char*)response->body.content);
 
 	free(response);
 }

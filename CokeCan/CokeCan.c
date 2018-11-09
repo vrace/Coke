@@ -18,12 +18,12 @@ struct CokeCan
 	ICE_CUBE_DELEGATE_IMPL iceCubeDelegate;
 };
 
-COKE_CAN* COKE_CAN_API CokeCan_Init(COKE_CAN_DELEGATE *delegate)
+COKE_CAN* COKE_CAN_API CokeCan_Init(COKE_CAN_DELEGATE *fn)
 {
 	COKE_CAN *cokeCan = malloc(sizeof(COKE_CAN));
 	
 	cokeCan->firstIce = NULL;
-	IceCubeDelegate_Init(&cokeCan->iceCubeDelegate, delegate);
+	IceCubeDelegate_Init(&cokeCan->iceCubeDelegate, fn);
 
 	return cokeCan;
 }

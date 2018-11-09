@@ -7,14 +7,15 @@
 extern "C" {
 #endif
 
-	struct CokeCanDelegate;
+	typedef struct CokeCanDelegate COKE_CAN_DELEGATE;
 
-	typedef void(*COKE_CAN_PRINT_FUNC)(struct CokeCanDelegate *delegate, const char *str);
-	typedef void(*COKE_CAN_INPUT_FUNC)(struct CokeCanDelegate *delegate, char *buf, int size);
+	typedef void(*COKE_CAN_PRINT_FUNC)(COKE_CAN_DELEGATE *self, const char *str);
+	typedef void(*COKE_CAN_INPUT_FUNC)(COKE_CAN_DELEGATE *self, char *buf, int size);
 
 	typedef struct CokeCanDelegate
 	{
 		COKE_CAN_PRINT_FUNC print;
+		COKE_CAN_PRINT_FUNC println;
 		COKE_CAN_INPUT_FUNC input;
 	} COKE_CAN_DELEGATE;
 
@@ -22,7 +23,7 @@ extern "C" {
 	typedef int (*ENUM_ICE_FUNC)(const char *iceName);
 	typedef int (*ENUM_CUBE_FUNC)(const char *cubeName);
 
-	COKE_CAN* COKE_CAN_API CokeCan_Init(COKE_CAN_DELEGATE *delegate);
+	COKE_CAN* COKE_CAN_API CokeCan_Init(COKE_CAN_DELEGATE *fn);
 	void COKE_CAN_API CokeCan_Free(COKE_CAN *cokeCan);
 
 	void COKE_CAN_API CokeCan_LoadIceCubes(COKE_CAN *cokeCan);
