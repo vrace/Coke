@@ -13,6 +13,9 @@
     <ClCompile Include="Scenarios\WebRequestExample.c">
       <Filter>Scenarios</Filter>
     </ClCompile>
+    <ClCompile Include="Scenarios\WebRequestByFileExample.c">
+      <Filter>Scenarios</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="IceCube.def" />
@@ -28,6 +31,9 @@
       <Filter>Scenarios</Filter>
     </ClInclude>
     <ClInclude Include="Scenarios\WebRequestExample.h">
+      <Filter>Scenarios</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenarios\WebRequestByFileExample.h">
       <Filter>Scenarios</Filter>
     </ClInclude>
   </ItemGroup>

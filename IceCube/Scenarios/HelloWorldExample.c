@@ -1,25 +1,24 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "HelloWorldExample.h"
 
 #define BUF_SIZE_MAX 1000
 
 int HelloWorldExample(ICE_CUBE_DELEGATE *fn)
 {
-	int len;
-	int avail;
 	char buf[BUF_SIZE_MAX];
 
-	strcpy(buf, "Hello ");
-	len = strlen(buf);
-	avail = BUF_SIZE_MAX - len - 1;
+	fn->print(fn, "The answer to the Ultimate Question of Life, the Universe, and Everything: ");
+	fn->printInt(fn, 42);
+	fn->println(fn, "");
 
-	fn->print(fn, "Enter name:");
-	fn->input(fn, buf + len, avail);
-	strcat(buf, "!");
+	fn->print(fn, "PI = ");
+	fn->printNumber(fn, 3.14159);
+	fn->println(fn, "");
+
+	fn->println(fn, "Enter name:");
+	fn->input(fn, buf, BUF_SIZE_MAX);
+	fn->print(fn, "Hello ");
 	fn->print(fn, buf);
+	fn->println(fn, "!");
 	
 	return 0;
 }

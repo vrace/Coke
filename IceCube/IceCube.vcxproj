@@ -83,6 +83,7 @@
     <ClCompile Include="IceName.c" />
     <ClCompile Include="Scenarios\HelloWorldExample.c" />
     <ClCompile Include="Scenarios\IniFileExample.c" />
+    <ClCompile Include="Scenarios\WebRequestByFileExample.c" />
     <ClCompile Include="Scenarios\WebRequestExample.c" />
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +94,7 @@
     <ClInclude Include="IceCubeDelegate.h" />
     <ClInclude Include="Scenarios\HelloWorldExample.h" />
     <ClInclude Include="Scenarios\IniFileExample.h" />
+    <ClInclude Include="Scenarios\WebRequestByFileExample.h" />
     <ClInclude Include="Scenarios\WebRequestExample.h" />
     <ClInclude Include="WebRequest.h" />
   </ItemGroup>

@@ -6,6 +6,7 @@
 #include "Scenarios/HelloWorldExample.h"
 #include "Scenarios/IniFileExample.h"
 #include "Scenarios/WebRequestExample.h"
+#include "Scenarios/WebRequestByFileExample.h"
 
 typedef int(*ICE_CUBE_FUNC)(ICE_CUBE_DELEGATE *fn);
 
@@ -19,6 +20,7 @@ static const ICE_CUBE_SCENARIO SCENARIOS[] = {
 	{ "Hello World", HelloWorldExample },
 	{ "INI File",  IniFileExample },
 	{ "Web Request",  WebRequestExample },
+	{ "Web Request By File", WebRequestByFileExample },
 };
 
 int ICE_CUBE_API IceCube_NumberOfIceCubes(void)

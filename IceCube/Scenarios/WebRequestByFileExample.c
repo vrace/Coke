@@ -1,21 +1,15 @@
-#include "WebRequestExample.h"
+#include "WebRequestByFileExample.h"
 
-int WebRequestExample(ICE_CUBE_DELEGATE *fn)
+int WebRequestByFileExample(ICE_CUBE_DELEGATE *fn)
 {
-	WEB_REQUEST_HEADER header;
 	WEB_REQUEST request;
 	WEB_RESPONSE *response;
-
-	fn->initWebRequestHeader(fn, &header);
-	header.name = "Accept";
-	header.value = "application/json";
 
 	fn->initWebRequest(fn, &request);
 	request.method = "GET";
 	request.url = "https://cn.bing.com";
-	request.header = &header;
-	request.body.size = 11;
-	request.body.content = "Fuzzy Bunny";
+	request.headersFile = "Example/RequestHeaders.txt";
+	request.bodyFile = "Example/RequestBody.txt";
 
 	response = fn->webRequest(fn, &request);
 	if (response)
