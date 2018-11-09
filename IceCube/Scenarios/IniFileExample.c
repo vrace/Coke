@@ -18,6 +18,35 @@ static const SHOW_COKE_DATA DATA[] =
 	{ "Winter", "Winter" },
 };
 
+void ShowComponent(ICE_CUBE_DELEGATE *fn, INI_FILE *ini, const SHOW_COKE_DATA *data, const char *component)
+{
+	const char *val;
+
+	fn->print(fn, data->showAs);
+	fn->print(fn, " ");
+	fn->print(fn, component);
+	fn->print(fn, ": ");
+
+	val = fn->iniFileValue(fn, ini, data->section, component);
+	if (val)
+	{
+		fn->println(fn, val);
+	}
+	else
+	{
+		fn->println(fn, "Not Present");
+	}
+}
+
+void ShowSettings(ICE_CUBE_DELEGATE *fn, INI_FILE *ini, int i)
+{
+	const SHOW_COKE_DATA *data;
+
+	data = &DATA[i];
+	ShowComponent(fn, ini, data, "coke");
+	ShowComponent(fn, ini, data, "tea");
+}
+
 int IniFileExample(ICE_CUBE_DELEGATE *fn)
 {
 	struct IniFile *ini;
@@ -31,22 +60,7 @@ int IniFileExample(ICE_CUBE_DELEGATE *fn)
 	}
 
 	for (i = 0; i < sizeof(DATA) / sizeof(SHOW_COKE_DATA); i++)
-	{
-		const char *val;
-
-		fn->print(fn, DATA[i].showAs);
-		fn->print(fn, " Coke: ");
-
-		val = fn->iniFileValue(fn, ini, DATA[i].section, "coke");
-		if (val)
-		{
-			fn->println(fn, val);
-		}
-		else
-		{
-			fn->println(fn, "Not Present");
-		}
-	}
+		ShowSettings(fn, ini, i);
 
 	fn->iniFileRelease(fn, ini);
 

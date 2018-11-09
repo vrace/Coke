@@ -90,9 +90,15 @@ INI_FILE_KEY_VALUE* IniFile_LoadKeyValue(char *buf)
 void IniFile_LoadContents(INI_FILE *ini, FILE *fp)
 {
 	INI_FILE_SECTION *current;
+	INI_FILE_SECTION **targetSection;
+	INI_FILE_KEY_VALUE **targetKeyValue;
+
 	char buf[LINE_LENGTH_MAX];
 
 	current = ini->firstSection;
+	targetSection = &current->next;
+	targetKeyValue = &current->firstValue;
+
 	while (fgets(buf, LINE_LENGTH_MAX, fp))
 	{
 		int len;
@@ -100,30 +106,22 @@ void IniFile_LoadContents(INI_FILE *ini, FILE *fp)
 		INI_FILE_KEY_VALUE *value;
 
 		len = strlen(buf);
-
-		if (len <= 0)
-			continue;
-
-		if (buf[len - 1] == '\n')
+		if (len > 0 && buf[len - 1] == '\n')
 			buf[--len] = '\0';
 
-		if (len == 0)
+		if (!*buf)
 			continue;
 
 		if ((section = IniFile_LoadSection(buf)))
 		{
-			INI_FILE_SECTION **target;
-
-			for (target = &ini->firstSection; *target; target = &(*target)->next);
-			*target = section;
-			current = section;
+			*targetSection = section;
+			targetSection = &section->next;
+			targetKeyValue = &section->firstValue;
 		}
 		else if ((value = IniFile_LoadKeyValue(buf)))
 		{
-			INI_FILE_KEY_VALUE **target;
-
-			for (target = &current->firstValue; *target; target = &(*target)->next);
-			*target = value;
+			*targetKeyValue = value;
+			targetKeyValue = &value->next;
 		}
 	}
 }
@@ -190,7 +188,7 @@ const char* IniFile_Value(INI_FILE *file, const char *section, const char *key)
 		{
 			INI_FILE_KEY_VALUE *kv;
 
-			for (kv = s->firstValue; s; s = s->next)
+			for (kv = s->firstValue; kv; kv = kv->next)
 			{
 				if (strcmp(kv->name, key) == 0)
 				{
