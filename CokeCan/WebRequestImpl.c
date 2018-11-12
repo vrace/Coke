@@ -180,12 +180,6 @@ WEB_RESPONSE* LoadResponse(void)
 	LoadResponseHeaders(response);
 	LoadResponseBody(&response->body);
 
-	_unlink(REQUEST_HEADERS_FILE);
-	_unlink(REQUEST_BODY_FILE);
-	_unlink(RESPONSE_HEADERS_FILE);
-	_unlink(RESPONSE_BODY_FILE);
-	_unlink(CURL_EXEC);
-
 	return response;
 }
 
