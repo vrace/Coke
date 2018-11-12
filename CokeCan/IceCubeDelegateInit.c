@@ -25,7 +25,7 @@ void IceCubePrintln(ICE_CUBE_DELEGATE *self, const char *str)
 void IceCubePrintInt(ICE_CUBE_DELEGATE *self, long val)
 {
 	char buf[NUMBER_BUF_MAX];
-	sprintf(buf, "%d", val);
+	sprintf(buf, "%ld", val);
 	IceCubePrint(self, buf);
 }
 

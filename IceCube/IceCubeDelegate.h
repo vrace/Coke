@@ -29,7 +29,7 @@ extern "C" {
 	typedef void(*INI_FILE_RELEASE_FUNC)(ICE_CUBE_DELEGATE *self, INI_FILE *file);
 	typedef const char*(*INI_FILE_VALUE_FUNC)(ICE_CUBE_DELEGATE *self, INI_FILE *file, const char *section, const char *key);
 
-	typedef struct IceCubeDelegate
+	struct IceCubeDelegate
 	{
 		PRINT_FUNC print;
 		PRINT_FUNC println;
