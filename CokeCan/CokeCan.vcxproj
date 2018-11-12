@@ -82,6 +82,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CokeCan.h" />
+    <ClInclude Include="FormatText.h" />
+    <ClInclude Include="FormatTextImpl.h" />
     <ClInclude Include="Ice.h" />
     <ClInclude Include="IceCubeDelegate.h" />
     <ClInclude Include="IceCubeDelegateInit.h" />
@@ -91,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CokeCan.c" />
+    <ClCompile Include="FormatTextImpl.c" />
     <ClCompile Include="Ice.c" />
     <ClCompile Include="IceCubeDelegateInit.c" />
     <ClCompile Include="IniFile.c" />

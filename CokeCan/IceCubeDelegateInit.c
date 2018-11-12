@@ -5,6 +5,7 @@
 #include "IceCubeDelegateInit.h"
 #include "WebRequestImpl.h"
 #include "IniFile.h"
+#include "FormatTextImpl.h"
 
 #define NUMBER_BUF_MAX 100
 
@@ -78,6 +79,11 @@ const char* ReadIniFileValue(ICE_CUBE_DELEGATE *self, INI_FILE *file, const char
 	return IniFile_Value(file, section, key);
 }
 
+void IceCubeFormatText(ICE_CUBE_DELEGATE *self, FORMAT_TEXT_DELEGATE *formatTextDelegate)
+{
+	FormatText(formatTextDelegate);
+}
+
 void IceCubeDelegate_Init(ICE_CUBE_DELEGATE_IMPL *impl, COKE_CAN_DELEGATE *delegate)
 {
 	impl->delegate = delegate;
@@ -96,4 +102,6 @@ void IceCubeDelegate_Init(ICE_CUBE_DELEGATE_IMPL *impl, COKE_CAN_DELEGATE *deleg
 	impl->base.iniFileLoad = LoadIniFile;
 	impl->base.iniFileRelease = ReleaseIniFile;
 	impl->base.iniFileValue = ReadIniFileValue;
+
+	impl->base.formatText = IceCubeFormatText;
 }

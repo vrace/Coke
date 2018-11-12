@@ -8,6 +8,8 @@
     <ClInclude Include="WebRequest.h" />
     <ClInclude Include="WebRequestImpl.h" />
     <ClInclude Include="IniFile.h" />
+    <ClInclude Include="FormatText.h" />
+    <ClInclude Include="FormatTextImpl.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CokeCan.c" />
@@ -15,6 +17,7 @@
     <ClCompile Include="Ice.c" />
     <ClCompile Include="WebRequestImpl.c" />
     <ClCompile Include="IniFile.c" />
+    <ClCompile Include="FormatTextImpl.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CokeCan.def" />
