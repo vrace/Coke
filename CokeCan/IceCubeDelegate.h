@@ -2,9 +2,10 @@
 #define ICE_CUBE_DELEGATE_H
 
 #define ICE_CUBE_VERSION_MAJOR 1
-#define ICE_CUBE_VERSION_MINOR 0
+#define ICE_CUBE_VERSION_MINOR 1
 
 #include "WebRequest.h"
+#include "FormatText.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -27,6 +28,8 @@ extern "C" {
 	typedef void(*INI_FILE_RELEASE_FUNC)(ICE_CUBE_DELEGATE *self, INI_FILE *file);
 	typedef const char*(*INI_FILE_VALUE_FUNC)(ICE_CUBE_DELEGATE *self, INI_FILE *file, const char *section, const char *key);
 
+	typedef void(*FORMAT_TEXT_FUNC)(ICE_CUBE_DELEGATE *self, FORMAT_TEXT_DELEGATE *formatTextDelegate);
+
 	struct IceCubeDelegate
 	{
 		PRINT_FUNC print;
@@ -43,6 +46,8 @@ extern "C" {
 		INI_FILE_LOAD_FUNC iniFileLoad;
 		INI_FILE_RELEASE_FUNC iniFileRelease;
 		INI_FILE_VALUE_FUNC iniFileValue;
+
+		FORMAT_TEXT_FUNC formatText;
 	};
 
 #ifdef __cplusplus
