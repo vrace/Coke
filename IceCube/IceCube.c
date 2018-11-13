@@ -23,6 +23,19 @@ static const ICE_CUBE_SCENARIO SCENARIOS[] = {
 	{ "Web Request By File", WebRequestByFileExample },
 };
 
+static const char ICE_NAME[] = "Example Ice";
+
+const char* ICE_CUBE_API IceCube_IceName(void)
+{
+	return ICE_NAME;
+}
+
+void ICE_CUBE_API IceCube_Version(int *major, int *minor)
+{
+	*major = ICE_CUBE_VERSION_MAJOR;
+	*minor = ICE_CUBE_VERSION_MINOR;
+}
+
 int ICE_CUBE_API IceCube_NumberOfIceCubes(void)
 {
 	return sizeof(SCENARIOS) / sizeof(ICE_CUBE_SCENARIO);

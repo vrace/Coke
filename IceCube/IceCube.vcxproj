@@ -79,8 +79,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="IceCube.c" />
-    <ClCompile Include="IceCubeVersion.c" />
-    <ClCompile Include="IceName.c" />
     <ClCompile Include="Scenarios\HelloWorldExample.c" />
     <ClCompile Include="Scenarios\IniFileExample.c" />
     <ClCompile Include="Scenarios\WebRequestByFileExample.c" />
